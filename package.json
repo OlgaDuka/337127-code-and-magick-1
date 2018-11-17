@@ -11,15 +11,16 @@
     "url": "https://github.com/htmlacademy-javascript/337127-code-and-magick/issues"
   },
   "devDependencies": {
+    "browser-sync": "^2.23.7",
     "eslint": "5.7.0",
     "eslint-config-htmlacademy": "0.5.2"
   },
-  "license": "MIT",
-  "dependencies": {},
   "scripts": {
     "test": "eslint js/",
     "start": "browser-sync start --server --files='./js/*.js,./*.css, ./*.html'"
   },
+  "license": "MIT",
+  "dependencies": {},
   "engines": {
     "node": "8.11"
   }
