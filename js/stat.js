@@ -48,7 +48,8 @@ window.renderStatistics = function (ctx, names, times) {
     fieldShadow.radius = fieldObject.radius;
   };
   // Рисуем объект поля или тени
-  var fieldDrow = function (field) {
+  var fieldDrow = function (field, color) {
+    ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(field.x1, field.y1 + field.radius);
     ctx.quadraticCurveTo(field.x1, field.y1, field.x1 + field.radius, field.y1);
@@ -75,11 +76,9 @@ window.renderStatistics = function (ctx, names, times) {
   };
 
   // Реализация
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
   fieldShadowValue(fieldFront, 10, 10);
-  fieldDrow(fieldShadow);
-  ctx.fillStyle = 'rgba(255, 255, 255, 1)';
-  fieldDrow(fieldFront);
+  fieldDrow(fieldShadow, 'rgba(0, 0, 0, 0.7)');
+  fieldDrow(fieldFront, '#fff');
   ctx.fillStyle = '#000';
   ctx.font = '16px PT Mono';
   ctx.fillText('Ура! Вы победили!', 140, 40);
